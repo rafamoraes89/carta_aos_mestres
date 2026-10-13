@@ -1,1 +1,202 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta - Leafa Dados RPG</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+
+        body {
+            background-color: #1a1a1a;
+            /* Textura sutil no fundo escuro */
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px 20px;
+            font-family: 'PT Serif', serif;
+        }
+
+        .scroll-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Animação de desenrolar */
+            animation: unroll 1.5s ease-out forwards;
+            overflow: hidden;
+            transform-origin: top;
+        }
+
+        .parchment {
+            background-color: #eaddcf;
+            /* Textura de pergaminho gerada via CSS usando gradientes e uma textura leve da web (pode ser substituída depois) */
+            background-image: url('https://www.transparenttextures.com/patterns/old-wall.png'), 
+                              linear-gradient(to right, #cba276 0%, #eaddcf 8%, #eaddcf 92%, #cba276 100%);
+            padding: 40px 60px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 
+                        inset 0 0 60px rgba(139, 69, 19, 0.2);
+            border-radius: 2px;
+            color: #3e2723;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hastes de madeira do pergaminho */
+        .roller {
+            background: linear-gradient(to bottom, #4a2b16, #704222, #4a2b16);
+            height: 28px;
+            width: 108%;
+            border-radius: 14px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.8), inset 0 2px 5px rgba(255,255,255,0.15);
+            position: relative;
+            z-index: 2;
+            left: -4%;
+        }
+
+        .roller-top {
+            margin-bottom: -14px;
+        }
+
+        .roller-bottom {
+            margin-top: -14px;
+        }
+
+        /* Detalhes dourados nas pontas das hastes */
+        .roller::before, .roller::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            width: 15px;
+            height: 32px;
+            background: linear-gradient(to bottom, #b8860b, #ffd700, #b8860b);
+            border-radius: 4px;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+        }
+
+        .roller::before { left: 0; }
+        .roller::after { right: 0; }
+
+        h1 {
+            font-family: 'MedievalSharp', cursive;
+            text-align: center;
+            color: #5c1605;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid rgba(139, 69, 19, 0.3);
+            padding-bottom: 15px;
+            font-size: 2.2em;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+        }
+
+        h3 {
+            font-family: 'MedievalSharp', cursive;
+            color: #5c1605;
+            margin-top: 35px;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+            font-size: 1.05em;
+        }
+
+        ul {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 1.05em;
+            list-style-type: square;
+        }
+        
+        li::marker {
+            color: #8b4513;
+        }
+
+        .signature {
+            margin-top: 50px;
+            text-align: right;
+            font-family: 'MedievalSharp', cursive;
+            font-size: 1.4em;
+            color: #5c1605;
+        }
+
+        @keyframes unroll {
+            0% {
+                max-height: 60px;
+                opacity: 0.5;
+            }
+            100% {
+                max-height: 3000px;
+                opacity: 1;
+            }
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 600px) {
+            .parchment {
+                padding: 30px 25px;
+            }
+            h1 { font-size: 1.8em; }
+            .roller { width: 104%; left: -2%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scroll-container">
+        <!-- Haste Superior -->
+        <div class="roller roller-top"></div>
+        
+        <!-- Conteúdo da Carta -->
+        <div class="parchment">
+            <h1>Mensagem aos Mestres</h1>
+            
+            <p>Olá, meu nome é Rafael de Moraes, sou o desenvolvedor do <strong>Leafa Dados RPG</strong>.</p>
+            
+            <p>Primeiramente, somos muito gratos por vocês participarem da experiência <em>Leafa Dados RPG Unique</em>. É com imenso prazer e alegria que estamos organizando esta campanha e oferecendo o tema premium Dragão Ancião + remoção de anúncios.</p>
+            
+            <p>O Leafa não pretende ser apenas um app simulador de dados, mas está disposto a evoluir, e graças a pessoas como vocês isto está se tornando possível. Sabemos que o app não é perfeito, nem tem a pretensão de ser, mas queremos entregar algo de valioso a todos os amantes de RPG de mesa e jogos de tabuleiro.</p>
+            
+            <p>Como prezamos pela transparência, queremos deixar claro que esta ação faz parte de uma campanha de marketing. Para que essa parceria seja incrível para ambos os lados, propomos o seguinte acordo para esta campanha:</p>
+            
+            <ul>
+                <li><strong>Joguem com o app:</strong> Utilizem o Leafa Dados em pelo menos duas sessões de jogo.</li>
+                <li><strong>Testem a novidade:</strong> Coloquem à prova a nossa mecânica inédita de <em>Bênção ou Maldição de Leafa</em>.</li>
+                <li><strong>Deem o feedback:</strong> Ao final, preencham nosso formulário de avaliação.</li>
+            </ul>
+            
+            <h3>Sobre o uso da Bênção e Maldição:</h3>
+            <p>Vocês têm total liberdade criativa para decidir como e quando aplicar essa mecânica nas suas mesas. No entanto, se quiserem uma sugestão de uso, recomendamos o seguinte: permitam que os jogadores peçam 'o favor de Leafa' em momentos cruciais da narrativa. Quando fizerem isso, ativem o modificador da Bênção para ajudá-los. O preço disso é que, em algum momento futuro (seja ele oportuno ou tragicamente inoportuno para o grupo!), eles terão de passar pelo teste da Maldição, onde vocês aplicarão o grau do modificador da Maldição de Leafa nas rolagens. Queremos ver como essa dinâmica vai funcionar nas mesas de vocês!</p>
+            
+            <p>Como mencionamos, os formulários preenchidos por vocês serão essenciais e nos ajudarão a divulgar o Leafa Dados RPG em nossa campanha de marketing. Por isso, pedimos que mergulhem nessa experiência com a mente aberta e sejam 100% sinceros no feedback. O nosso maior objetivo é evoluir, e a opinião honesta de vocês é o que vai nos guiar.</p>
+            
+            <p>Para iniciarmos essa jornada, o tema premium e a remoção de anúncios serão liberados imediatamente para vocês utilizarem por 30 dias. Ao concluírem a campanha enviando o formulário dentro desse período, esses benefícios serão de vocês para sempre, como nossa forma de agradecimento! Caso ocorra algum imprevisto e não consigam concluir a tempo, sem problemas: o app apenas retornará à versão padrão da loja.</p>
+            
+            <p>Se quiserem abraçar este projeto junto com a gente e toparem o acordo, basta responder a esta carta no e-mail, no qual receberam este link, confirmando a participação.</p>
+            
+            <p>Um grande abraço e boas rolagens!</p>
+            
+            <div class="signature">
+                Rafael de Moraes<br>
+                <span style="font-size: 0.7em; color: #8b4513; font-family: 'PT Serif', serif;">Desenvolvedor do Leafa Dados RPG</span>
+            </div>
+        </div>
+
+        <!-- Haste Inferior -->
+        <div class="roller roller-bottom"></div>
+    </div>
+
+</body>
+</html>
